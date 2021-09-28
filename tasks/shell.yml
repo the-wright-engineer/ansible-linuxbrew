@@ -8,21 +8,6 @@
     - "{{ linuxbrew_prefix_user }}"
   become: true
 
-# Place brew binary in proper location and complete setup.
-- name: Check if homebrew binary is already in place.
-  stat:
-    path: "{{ homebrew_brew_bin_path }}/brew"
-  register: homebrew_binary
-  check_mode: false
-
-- name: Symlink brew to homebrew_brew_bin_path.
-  file:
-    src: "{{ homebrew_install_path }}/bin/brew"
-    dest: "{{ homebrew_brew_bin_path }}/brew"
-    state: link
-  when: not homebrew_binary.stat.exists
-  become: true
-
 - name: Load Linuxbrew in bash
   include_tasks: shell_bash.yml
   when: linuxbrew_prefix is defined
