@@ -11,3 +11,17 @@ linuxbrew_use_installer: false
 
 # Configure shell rc files
 linuxbrew_init_shell: true
+
+# Shared directory to install Linuxbrew in
+linuxbrew_prefix_shared: "/home/linuxbrew/.linuxbrew"
+
+# Brew Git repository
+linuxbrew_brew_repo: https://github.com/Homebrew/brew
+linuxbrew_brew_version: master
+linuxbrew_core_tap_repo: https://github.com/Homebrew/linuxbrew-core
+linuxbrew_core_tap_version: master
+
+# Linuxbrew installer script
+linuxbrew_install_tmp: "/tmp/linuxbrew"
+linuxbrew_install_url: "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+linuxbrew_install_checksum: "sha256:586d9ddff4c8a3ab0c1e9ab3e26a4cb5e4453fe43970207c215d329531921527"
